@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographie : Intégration Sage X3 vs Cegid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased p-4 md:p-8">
+
+    <!-- Header Section -->
+    <header class="max-w-6xl mx-auto mb-12 text-center">
+        <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full text-sm font-semibold tracking-wide mb-4">
+            Feuille de Route ERP & Retail
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
+            Intégration <span class="text-indigo-600">Sage X3</span> & <span class="text-rose-500">Cegid</span>
+        </h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            Questions stratégiques et techniques pour valider l'architecture, la performance et la sécurité des flux de données entre l'ERP et le système de caisse.
+        </p>
+    </header>
+
+    <!-- Infographic Grid -->
+    <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1: Architecture -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-indigo-500 card-hover">
+            <div class="flex items-center mb-5">
+                <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                    <i data-lucide="network" class="text-indigo-600 w-6 h-6"></i>
+                </div>
+                <h2 class="text-xl font-bold text-slate-800">Architecture & Scalabilité</h2>
+            </div>
+            <ul class="space-y-4 text-sm text-slate-600">
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-indigo-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Modèle d'ingestion :</strong> Tickets unitaires vs. mouvements agrégés ?</div>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-indigo-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Limites API :</strong> Quel est le débit maximal et les limites de taux (rate limits) ?</div>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-indigo-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Synchro MDM :</strong> Comment diffuser des milliers de MAJ sans verrouiller X3 ?</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Data Flow -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-blue-500 card-hover">
+            <div class="flex items-center mb-5">
+                <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                    <i data-lucide="arrow-right-left" class="text-blue-600 w-6 h-6"></i>
+                </div>
+                <h2 class="text-xl font-bold text-slate-800">Flux & Transformation</h2>
+            </div>
+            <ul class="space-y-4 text-sm text-slate-600">
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Zone de Staging :</strong> Native dans X3 ou transformation externe via SSIS ?</div>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Événements :</strong> Webhooks (Push) natifs ou Polling continu requis ?</div>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Sécurité API :</strong> Quels standards d'authentification sont exigés ?</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Risk & Performance -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-rose-500 card-hover">
+            <div class="flex items-center mb-5">
+                <div class="bg-rose-100 p-3 rounded-lg mr-4">
+                    <i data-lucide="shield-alert" class="text-rose-600 w-6 h-6"></i>
+                </div>
+                <h2 class="text-xl font-bold text-slate-800">Risque & Performance</h2>
+            </div>
+            <ul class="space-y-4 text-sm text-slate-600">
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-rose-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Isolation I/O :</strong> Impact des requêtes POS sur les calculs MRP critiques ?</div>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-rose-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Deadlocks :</strong> Gestion des verrous lors d'injections parallèles massives.</div>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-rose-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Erreurs & Rollbacks :</strong> File d'attente native, retraitement et annulation propre ?</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Card 4: Cost & AWS -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-amber-500 card-hover">
+            <div class="flex items-center mb-5">
+                <div class="bg-amber-100 p-3 rounded-lg mr-4">
+                    <i data-lucide="cloud-lightning" class="text-amber-600 w-6 h-6"></i>
+                </div>
+                <h2 class="text-xl font-bold text-slate-800">Coût & Infra (AWS)</h2>
+            </div>
+            <ul class="space-y-4 text-sm text-slate-600">
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-amber-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Croissance BDD :</strong> Impact du détail POS sur les coûts AWS (3 à 5 ans) ?</div>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-amber-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Archivage :</strong> Mécanismes natifs (données chaudes/froides) sans perte comptable ?</div>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-amber-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Middleware :</strong> Serveurs dédiés requis pour protéger X3 du trafic ?</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Card 5: Governance & BI -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-emerald-500 card-hover">
+            <div class="flex items-center mb-5">
+                <div class="bg-emerald-100 p-3 rounded-lg mr-4">
+                    <i data-lucide="bar-chart-3" class="text-emerald-600 w-6 h-6"></i>
+                </div>
+                <h2 class="text-xl font-bold text-slate-800">Gouvernance & BI</h2>
+            </div>
+            <ul class="space-y-4 text-sm text-slate-600">
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Intégration SEI :</strong> Requête directe sur le POS ou via un Data Warehouse (SQL) ?</div>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Accès SQL :</strong> Accès direct en lecture (vues/réplicas) possible pour Power BI ?</div>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Dépendance API :</strong> Sommes-nous contraints d'extraire la data via API uniquement ?</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Card 6: B2B & E-commerce -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-violet-500 card-hover">
+            <div class="flex items-center mb-5">
+                <div class="bg-violet-100 p-3 rounded-lg mr-4">
+                    <i data-lucide="shopping-bag" class="text-violet-600 w-6 h-6"></i>
+                </div>
+                <h2 class="text-xl font-bold text-slate-800">B2B & E-commerce</h2>
+            </div>
+            <ul class="space-y-4 text-sm text-slate-600">
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-violet-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Portail B2B :</strong> Solution native dans X3 ou intégration tierce requise ?</div>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-violet-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Connecteurs B2C :</strong> Plugins natifs (Shopify, Magento) ou dev sur mesure ?</div>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-violet-500 mt-1 mr-2 flex-shrink-0"></i>
+                    <div><strong class="text-slate-800">Stock Omnicanal :</strong> Prévention des ventes à découvert (conflits flash sales / B2B) ?</div>
+                </li>
+            </ul>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl mx-auto mt-12 text-center text-sm text-slate-500 border-t border-slate-200 pt-6 pb-8">
+        <p>Généré pour la préparation de la réunion stratégique ERP & POS.</p>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
